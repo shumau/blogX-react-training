@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import {NavContainer, Navigation} from "../../components/styled/Containers";
+import { Navigation} from "../../components/styled/Containers";
 import {NavigationButton} from "../../components/styled/Buttons";
 import ActionCreator from "../../state/actions/root.actions";
 import { toggleNavBar } from "../../state/actions/app.actions";
 import { useSelector } from "react-redux";
 import { getToggle } from "../../state/selectors/app.selectors";
 
-export type NavbarProps = {}
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
     const isOpen = useSelector(getToggle);
     console.log(isOpen)
     const toggleNav = () => { console.log(isOpen); ActionCreator(toggleNavBar())}
@@ -18,7 +17,7 @@ const Navbar = (props: NavbarProps) => {
                 <span></span>
             </NavigationButton>
             {isOpen  && (
-                <Navigation>
+                <Navigation open={isOpen}>
                     <Link onClick={toggleNav} to="/">Home</Link>
                     <Link onClick={toggleNav} to="/feed">Feed</Link>
                     <Link onClick={toggleNav} to="/login">Login</Link>
