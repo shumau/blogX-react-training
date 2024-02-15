@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Router from "../../router/Router";
 import {BlockContainer, MainContainer} from "../../components/styled/Containers";
 
+
 const Application = () => {
     return (
         <BlockContainer>

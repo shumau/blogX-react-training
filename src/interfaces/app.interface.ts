@@ -8,4 +8,7 @@ export interface IState {
     posts: {
         list: Post[]
     };
+    app: {
+        isOpen: boolean;
+    }
 }

@@ -11,12 +11,7 @@ export const MainContainer = styled.main`
   padding: 20px;
 `;
 export const NavContainer = styled.nav`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 10000;
+    
 `
 export const BlogContainer = styled.div`
     display: flex;
@@ -25,19 +20,20 @@ export const BlogContainer = styled.div`
     align-items: center;
     justify-content: center;
 `
-export const Navigation = styled.ul`
-    @media (max-width: 760px){ 
-        flex-direction: column;
-        background-color: #f7f3f3;
-        height: auto;
-        padding: 20px 0;
-    }
-    list-style-type: none;
-    height: 100%;
+export const Navigation = styled.div`
+    background-color: #e8ffe8;
+   position: fixed;
+   padding-top: 100px;
+    top: 0;
+    left: 0;
+    width: 300px;
     display: flex;
-    justify-content: left;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 10000;
+    padding-inline-start: 0px;
+    list-style-type: none;
     align-items: center;
-    position: relative;
     gap:20px;
 `
 export const Headers = styled.header`

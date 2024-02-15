@@ -12,7 +12,7 @@ const USER_ACTION_TYPES = {
     GET: "GET_USER"
 }
 const APP_ACTION_TYPES = {
-    NAVBAR: "TOGGLE_NAVBAR"
+    TOGGLE_NAVBAR: "TOGGLE_NAVBAR"
 }
 
 export {

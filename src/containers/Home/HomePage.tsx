@@ -6,11 +6,10 @@ import {POST_ACTION_TYPES} from "../../state/actions/action.types";
 import {getPost} from "../../state/selectors/app.selectors";
 import {BlogContainer} from "../../components/styled/Containers";
 import Post from "../Post/Post";
-import Display from "../../components/Display";
 
 const HomePage = () => {
     const posts = useSelector(getPost);
-
+    console.log(posts)
     useEffect(() => {
         getData(API.POST, POST_ACTION_TYPES.LOAD)
     }, [])
