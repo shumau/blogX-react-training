@@ -8,6 +8,8 @@ const PostsReducer = (state = INITIAL_POSTS_STATE, action: any) => {
             return { ...state, list: payload  };
         case POST_ACTION_TYPES.GET_BY_ID:
             return { ...state, list: payload  };
+        case POST_ACTION_TYPES.GET_COMMENTS:
+            return { ...state, comments: payload  };
         default: return state;
     }
 }

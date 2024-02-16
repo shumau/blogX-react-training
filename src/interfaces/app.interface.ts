@@ -7,10 +7,8 @@ export interface IState {
     };
     user: {};
     posts: {
-        list: Post[] | Post
-    };
-    comments: {
-        list:  Comment[]
+        list: Post[];
+        comments: Comment[]
     };
     app: {
         isOpen: boolean;

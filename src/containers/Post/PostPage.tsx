@@ -5,16 +5,16 @@ import { Details, Img } from "./Post.styled";
 import { useEffect } from "react";
 import { getData, getDataByID } from "../../services/http.services";
 import { API } from "../../services/http-url";
-import { COMMENT_ACTION_TYPES, POST_ACTION_TYPES } from "../../state/actions/action.types";
+import { POST_ACTION_TYPES } from "../../state/actions/action.types";
 import { useSelector } from "react-redux";
 import {  getComment, getPost } from "../../state/selectors/app.selectors";
 import PostComment from "./PostComment";
-import { Comment } from "../../types/comment.types";
+import { IState } from "../../interfaces/app.interface";
 
 const PostPage = () => {
     const params = useParams();
     const post = useSelector(getPost);
-    const comments = useSelector(getComment)?.filter(comment => '' + comment.postId === params?.id);
+    const comments = useSelector((state: IState) => getComment(state, params?.id));
 
     useEffect(() => {
         getDataByID(API.POST_GET_BY_ID, params?.id, POST_ACTION_TYPES.GET_BY_ID)
@@ -22,7 +22,7 @@ const PostPage = () => {
 
     
     useEffect(() => {
-        getData(API.COMMENT, COMMENT_ACTION_TYPES.GET_COMMENTS)
+        getData(API.COMMENT, POST_ACTION_TYPES.GET_COMMENTS)
     }, [])
 
     return (
