@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import {hasError} from "../state/selectors/app.selectors";
+import {hasError} from "../state/selectors/http.selectors";
 import { AlertContainer } from "./styled/Containers";
 import { Alert } from "./styled/Elements";
 

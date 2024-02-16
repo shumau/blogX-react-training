@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import { Navigation} from "../../components/styled/Containers";
-import {NavigationButton} from "../../components/styled/Buttons";
-import ActionCreator from "../../state/actions/root.actions";
-import { toggleNavBar } from "../../state/actions/app.actions";
 import { useSelector } from "react-redux";
+import { toggleNavBar } from "../../state/actions/app.actions";
 import { getToggle } from "../../state/selectors/app.selectors";
+import { Navigation} from "../../components/styled/Containers";
+import { NavigationButton } from "../../components/styled/Buttons";
 
 const Navbar = () => {
     const isOpen = useSelector(getToggle);
-    const toggleNav = () => { toggleNavBar()}
+    const toggleNav = () => toggleNavBar()
     return (
         <>
             <NavigationButton onClick={toggleNav} >

@@ -1,4 +1,4 @@
-import {APP_ACTION_TYPES} from "../actions/action.types";
+import {APP_ACTIONS} from "../../enums/app.enum";
 const INITIAL_APP_STATE = {
         isOpen: false
 }
@@ -6,7 +6,7 @@ const INITIAL_APP_STATE = {
 const AppReducer = (state = INITIAL_APP_STATE, action: any) => {
     const { type, payload } = action;
     switch(type) {
-        case APP_ACTION_TYPES.TOGGLE_NAVBAR:
+        case APP_ACTIONS.TOGGLE_NAVBAR:
             return {...state, isOpen: !state.isOpen };
         default: return state;
     }

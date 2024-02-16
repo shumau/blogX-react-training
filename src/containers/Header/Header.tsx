@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import {TitleH1} from '../../components/styled/Typography';
+import { TitleH1 } from '../../components/styled/Typography';
 import { Headers } from '../../components/styled/Containers';
 import { Avatar } from '../../components/styled/Elements';
 

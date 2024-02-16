@@ -1,6 +1,6 @@
-import {Description, Img, Link, PostContainer} from "./Post.styled";
-import {Date, TitleH3} from "../../components/styled/Typography";
-import {Post as PostElement} from "../../types/post.types";
+import {Post as PostElement} from "../types/post.types";
+import {Description, Img, Link, PostContainer} from "./styled/Post";
+import {Date, TitleH3} from "./styled/Typography";
 
 type PostType = {
     post: PostElement;

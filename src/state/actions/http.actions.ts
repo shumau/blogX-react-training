@@ -1,19 +1,19 @@
-import {HTTP_ACTION_TYPES} from './action.types';
+import {HTTP_ACTIONS} from '../../enums/http.enum';
 import {ActionType} from "../../types/app.types";
 
 export const httpStart = (): ActionType => ({
-    type: HTTP_ACTION_TYPES.START
+    type: HTTP_ACTIONS.START
 });
 export const httpSuccess = (data: any, responseAction: string): ActionType => ({
     type: responseAction,
     payload: data
 });
 export const httpError = (error: any): ActionType => ({
-    type: HTTP_ACTION_TYPES.REQUEST_FAILED,
+    type: HTTP_ACTIONS.REQUEST_FAILED,
     payload: {
         error
     }
 });
 export const httpEnd = (): ActionType => ({
-    type: HTTP_ACTION_TYPES.END,
+    type: HTTP_ACTIONS.END,
 });

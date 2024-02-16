@@ -1,6 +1,6 @@
 import { CommentContainer } from "../../components/styled/Containers";
-import { Comment } from "../../types/comment.types";
-import { CommentBody } from "./Post.styled";
+import { Comment } from "../../types/post.types";
+import { CommentBody } from "../../components/styled/Post";
 
 type PostCommentType = {
     comment: Comment;

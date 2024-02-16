@@ -1,23 +1,20 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import {getData} from "../../services/http.services";
-import {API} from "../../services/http-url";
-import {POST_ACTION_TYPES} from "../../state/actions/action.types";
-import {getPost} from "../../state/selectors/app.selectors";
-import {BlogContainer} from "../../components/styled/Containers";
-import Post from "../Post/Post";
-import { Post as Posts } from "../../types/post.types";
+import { getAllPosts } from "../../services/post.services";
+import { selectAllPosts } from "../../state/selectors/post.selectors";
+import { BlogContainer } from "../../components/styled/Containers";
+import Post from "../../components/Post";
 
 const HomePage = () => {
-    const posts = useSelector(getPost);
-    useEffect(() => {
-        getData(API.POST, POST_ACTION_TYPES.LOAD)
-    }, [])
+    const posts = useSelector(selectAllPosts);
 
+    useEffect(() => {
+        getAllPosts()
+    }, [])
 
     return (
         <BlogContainer>
-            {(posts as Posts[]) && (posts as Posts[]).length && (posts as Posts[]).map(post=> (<Post key={post.id} post={post} />))}
+            {posts && posts.length && posts.map(post=> (<Post key={post.id} post={post} />))}
         </BlogContainer>
     )
 }

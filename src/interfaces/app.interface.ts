@@ -1,5 +1,5 @@
-import { Comment } from "../types/comment.types";
-import {Post} from "../types/post.types";
+import { Post, Comment } from "../types/post.types";
+
 export interface IState {
     http: {
         loading: boolean;
@@ -8,6 +8,9 @@ export interface IState {
     user: {};
     posts: {
         list: Post[];
+        post: {
+            [key: string]: Post
+        };
         comments: Comment[]
     };
     app: {
