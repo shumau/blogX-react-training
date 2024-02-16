@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const BlockContainer = styled.div`
    max-width: 1980px;
+   height: 100vh;
    padding: 0 30px;
    position: relative;
    box-sizing: border-box;
@@ -60,4 +61,27 @@ export const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+`
+
+export const AlertContainer = styled.div`
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    border: 1px solid transparent;
+    z-index: 1000000;
+    animation: alert 5s linear;
+    @keyframes alert {
+        0% {
+            bottom: -100px;
+        }
+        10% {
+            bottom: 0px;
+        }
+        90% {
+            bottom: 0px;
+        }
+        100% {
+            bottom: -100px;
+        }
+    }
 `
