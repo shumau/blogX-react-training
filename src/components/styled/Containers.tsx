@@ -99,6 +99,10 @@ export const LoadingContainer = styled.div`
     justify-content: center;
 `
 
-export const CommentContainer = styled.div`
-    
+export const CommentDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
 `
