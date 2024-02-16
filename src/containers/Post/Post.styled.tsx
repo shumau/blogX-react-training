@@ -60,12 +60,12 @@ export const CommentBody = styled.p`
     color: black;
 `
 
-export const CommentInput = styled.textarea`
+export const Textarea = styled.textarea`
     font-size: 20px;
     padding: 10px 15px;
     width: calc(100vw - 200px);
     resize: none;
-    
+
     @media (max-width:760px) {
         width: calc(100vw - 100px)
     }

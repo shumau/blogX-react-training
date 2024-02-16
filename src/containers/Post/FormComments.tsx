@@ -1,13 +1,14 @@
+import { Form} from "../../components/form/styled/Form"
 import { SubmitFormButton } from "../../components/styled/Buttons"
-import { CommentDiv } from "../../components/styled/Containers"
-import { CommentInput } from "./Post.styled"
+import { Textarea } from "./Post.styled"
+
 
 const FormComments = () => {
     return (
-        <CommentDiv>
-            <CommentInput name="comment" id="comment"></CommentInput>
+        <Form>
+            <Textarea name="comment" id="comment"></Textarea>
             <SubmitFormButton>Comment</SubmitFormButton>
-        </CommentDiv>
+        </Form>
     )
 }
 
