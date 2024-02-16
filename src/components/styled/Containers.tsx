@@ -64,7 +64,7 @@ export const Wrapper = styled.div`
 `
 
 export const AlertContainer = styled.div`
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: -100px;
     border: 1px solid transparent;
