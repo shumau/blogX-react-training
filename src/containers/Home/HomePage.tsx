@@ -6,6 +6,7 @@ import {POST_ACTION_TYPES} from "../../state/actions/action.types";
 import {getPost} from "../../state/selectors/app.selectors";
 import {BlogContainer} from "../../components/styled/Containers";
 import Post from "../Post/Post";
+import { Post as Posts } from "../../types/post.types";
 
 const HomePage = () => {
     const posts = useSelector(getPost);
@@ -16,7 +17,7 @@ const HomePage = () => {
 
     return (
         <BlogContainer>
-            {posts && posts.length && posts.map(post=> (<Post key={post.id} post={post} />))}
+            {(posts as Posts[]) && (posts as Posts[]).length && (posts as Posts[]).map(post=> (<Post key={post.id} post={post} />))}
         </BlogContainer>
     )
 }

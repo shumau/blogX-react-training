@@ -38,9 +38,24 @@ export const Img = styled.img`
     object-position: center;
     height: 100%;
 `
+export const Details = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 80px;
+
+    @media (max-width:760px) {
+        padding: 0 20px;
+    }
+`
+
 export const Description = styled.p`
      display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+`
+
+export const CommentBody = styled.p`
+    color: black;
 `
