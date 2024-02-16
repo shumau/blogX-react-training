@@ -3,7 +3,7 @@ import { Date, TitleH3 } from "../../components/styled/Typography";
 import { Post } from "../../types/post.types";
 import { Details, Img } from "./Post.styled";
 import { useEffect } from "react";
-import { getComments, getDataByID } from "../../services/http.services";
+import { getData, getDataByID } from "../../services/http.services";
 import { API } from "../../services/http-url";
 import { COMMENT_ACTION_TYPES, POST_ACTION_TYPES } from "../../state/actions/action.types";
 import { useSelector } from "react-redux";
@@ -22,7 +22,7 @@ const PostPage = () => {
 
     
     useEffect(() => {
-        getComments(API.COMMENT, COMMENT_ACTION_TYPES.GET_COMMENTS)
+        getData(API.COMMENT, COMMENT_ACTION_TYPES.GET_COMMENTS)
     }, [])
 
     return (

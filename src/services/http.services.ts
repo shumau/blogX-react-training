@@ -40,15 +40,6 @@ export const getDataByID = (path: string, id: string | undefined, action: string
         .finally(finalHandler);
 }
 
-export const getComments = (path: string, action: string)=>{
-    ActionCreator(httpStart());
-    axios
-        .get(createUrl(path))
-        .then(responseHandler(action))
-        .catch(errorHandler)
-        .finally(finalHandler);
-}
-
 const createUrl = (path: string , params = ''): string => {
     return `${config.baseURL}${path}${params}`
 }
