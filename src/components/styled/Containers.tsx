@@ -85,3 +85,14 @@ export const AlertContainer = styled.div`
         }
     }
 `
+
+export const LoadingContainer = styled.div`
+    width: 100vw;
+    height: 100vh;
+    background-color: "white"; 
+    position: "absolute";
+    z-index: 10000000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
