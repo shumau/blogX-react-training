@@ -5,7 +5,8 @@ const HTTP_ACTION_TYPES = {
 }
 
 const POST_ACTION_TYPES = {
-    LOAD: "LOAD_ALL_POSTS"
+    LOAD: "LOAD_ALL_POSTS",
+    GET_BY_ID: "GET_BY_ID"
 }
 
 const USER_ACTION_TYPES = {

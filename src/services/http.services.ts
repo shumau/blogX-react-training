@@ -31,8 +31,17 @@ export const getData = (path: string, action: string) => {
         .finally(finalHandler);
 };
 
-const createUrl = (path: string): string => {
-    return `${config.baseURL}${path}`
+export const getDataByID = (path: string, id: string | undefined, action: string)=>{
+    ActionCreator(httpStart());
+    axios
+        .get(createUrl(path, id))
+        .then(responseHandler(action))
+        .catch(errorHandler)
+        .finally(finalHandler);
+}
+
+const createUrl = (path: string, params = ''): string => {
+    return `${config.baseURL}${path}${params}`
 }
 const responseHandler = (responseAction: string) => {
     return (res: any): void => {

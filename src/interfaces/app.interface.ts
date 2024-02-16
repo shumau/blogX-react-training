@@ -6,7 +6,7 @@ export interface IState {
     };
     user: {};
     posts: {
-        list: Post[]
+        list: Post[] | Post
     };
     app: {
         isOpen: boolean;

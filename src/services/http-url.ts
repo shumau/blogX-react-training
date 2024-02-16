@@ -1,3 +1,4 @@
 export const API = {
-    POST: "/posts"
+    POST: "/posts",
+    GET_BY_ID: "/posts/"
 }
