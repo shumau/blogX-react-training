@@ -55,3 +55,7 @@ export const Description = styled.p`
     -webkit-box-orient: vertical;  
     overflow: hidden;
 `
+
+export const CommentBody = styled.p`
+    color: black;
+`

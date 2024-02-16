@@ -1,3 +1,4 @@
+import { Comment } from "../types/comment.types";
 import {Post} from "../types/post.types";
 export interface IState {
     http: {
@@ -7,6 +8,9 @@ export interface IState {
     user: {};
     posts: {
         list: Post[] | Post
+    };
+    comments: {
+        list:  Comment
     };
     app: {
         isOpen: boolean;

@@ -7,13 +7,15 @@ import { getDataByID } from "../../services/http.services";
 import { API } from "../../services/http-url";
 import { POST_ACTION_TYPES } from "../../state/actions/action.types";
 import { useSelector } from "react-redux";
-import { getPost } from "../../state/selectors/app.selectors";
+import {  getPost } from "../../state/selectors/app.selectors";
+import PostComment from "./PostComment";
 
-const PostPage = (props: Post) => {
+const PostPage = () => {
     const params = useParams();
     const post = useSelector(getPost);
+
     useEffect(() => {
-        getDataByID(API.GET_BY_ID, params?.id, POST_ACTION_TYPES.GET_BY_ID)
+        getDataByID(API.POST_GET_BY_ID, params?.id, POST_ACTION_TYPES.GET_BY_ID)
     }, [])
 
     return (
@@ -22,6 +24,7 @@ const PostPage = (props: Post) => {
             <Date>{(post as Post)?.publishedAt}</Date>
             <Img src={(post as Post)?.image} alt={(post as Post)?.title} />
             <p style={{marginBottom:150}}>{(post as Post)?.content}</p>
+            <PostComment />
         </Details>
     )
 }

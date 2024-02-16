@@ -1,4 +1,5 @@
 export const API = {
     POST: "/posts",
-    GET_BY_ID: "/posts/"
+    POST_GET_BY_ID: "/posts/",
+    COMMENT_GET_BY_ID_POST: "/comments/"
 }
