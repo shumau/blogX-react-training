@@ -89,8 +89,10 @@ export const AlertContainer = styled.div`
 export const LoadingContainer = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: "white"; 
-    position: "absolute";
+    background-color: white; 
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10000000000;
     display: flex;
     align-items: center;
