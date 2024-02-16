@@ -8,8 +8,7 @@ import { getToggle } from "../../state/selectors/app.selectors";
 
 const Navbar = () => {
     const isOpen = useSelector(getToggle);
-    console.log(isOpen)
-    const toggleNav = () => { console.log(isOpen); ActionCreator(toggleNavBar())}
+    const toggleNav = () => { toggleNavBar()}
     return (
         <>
             <NavigationButton onClick={toggleNav} >

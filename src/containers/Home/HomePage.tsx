@@ -9,7 +9,6 @@ import Post from "../Post/Post";
 
 const HomePage = () => {
     const posts = useSelector(getPost);
-    console.log(posts)
     useEffect(() => {
         getData(API.POST, POST_ACTION_TYPES.LOAD)
     }, [])

@@ -9,6 +9,7 @@ export const NavigationButton = styled.button`
     gap: 5px;
     background: none;
     border: none;
+    cursor: pointer;
     
     &>span{
         width: 15px;
