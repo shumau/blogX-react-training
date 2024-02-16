@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 export const NavigationButton = styled.button`
-    display: none;
+    display: flex;
     position: absolute;
     left: 30px;
     top: 35px;
@@ -9,16 +9,15 @@ export const NavigationButton = styled.button`
     gap: 5px;
     background: none;
     border: none;
-
-    @media (max-width:760px) {
-        display: flex;
-    }
+    cursor: pointer;
     
     &>span{
         width: 15px;
         height: 3px;
         background-color: black;
     }
+
+    z-index: 100000;
 `
 export const SubmitFormButton = styled.button`
     min-width: 100%;

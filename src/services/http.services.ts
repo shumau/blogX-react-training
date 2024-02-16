@@ -12,6 +12,7 @@ export const createAsyncCall = (path: string, method: string, action: string, da
         .catch(errorHandler)
         .finally(finalHandler);
 };
+
 export const postData = (path: string, action: string, data?: any) => {
     ActionCreator(httpStart());
     axios
@@ -38,9 +39,11 @@ const responseHandler = (responseAction: string) => {
         ActionCreator(httpSuccess(res.data, responseAction));
     }
 }
+
 const errorHandler = (err: any): void => {
     ActionCreator(httpError(err.message));
 }
+
 const finalHandler = (): void => {
     ActionCreator(httpEnd());
 }
