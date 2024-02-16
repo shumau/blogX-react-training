@@ -11,7 +11,7 @@ const Spinner = () => {
                         radius={5}
                         color="#4fa94d"
                         ariaLabel="ball-triangle-loading"
-                        wrapperStyle={{width: "100vw", height: "100vh", backgroundColor: "white", position: "absolute", zIndex: "10000000000", display: "flex", alignItems: "center", justifyContent: "center"}}
+                        wrapperStyle={{width: "100vw", height: "100vh", backgroundColor: "white", position: "absolute", left: "0", top: "0", zIndex: "10000000000", display: "flex", alignItems: "center", justifyContent: "center"}}
                         wrapperClass=""
                         visible={true}
                     />
