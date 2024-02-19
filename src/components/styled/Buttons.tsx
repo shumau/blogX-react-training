@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components'
 
 export const NavigationButton = styled.button`
     display: flex;
-    position: absolute;
+    position: fixed;
     left: 30px;
     top: 35px;
     flex-direction: column;
