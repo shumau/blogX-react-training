@@ -1,14 +1,14 @@
-import {HTTP_ACTION_TYPES} from "../actions/action.types";
+import {HTTP_ACTIONS} from "../../enums/http.enum";
 const INITIAL_HTTP_STATE = {}
 
 const HttpReducer = (state = INITIAL_HTTP_STATE, action: any) => {
     const { type, payload } = action;
     switch(type) {
-        case HTTP_ACTION_TYPES.START:
+        case HTTP_ACTIONS.START:
             return { ...state, loading: true };
-        case HTTP_ACTION_TYPES.END:
+        case HTTP_ACTIONS.END:
             return { ...state, loading: false };
-        case HTTP_ACTION_TYPES.REQUEST_FAILED:
+        case HTTP_ACTIONS.REQUEST_FAILED:
             return { ...state, error: payload, loading: false  };
         default: return state;
     }

@@ -12,3 +12,10 @@ export type Post = {
     updatedAt: string,
     userId: number
 }
+
+export type Comment = {
+    id: number,
+    postId: number,
+    userId: number,
+    comment: string
+}

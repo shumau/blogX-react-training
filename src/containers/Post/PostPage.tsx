@@ -1,30 +1,25 @@
-import { useParams } from "react-router-dom";
-import { Date, TitleH3 } from "../../components/styled/Typography";
-import { Post } from "../../types/post.types";
-import { Details, Img } from "./Post.styled";
 import { useEffect } from "react";
-import { getData, getDataByID } from "../../services/http.services";
-import { API } from "../../services/http-url";
-import { POST_ACTION_TYPES } from "../../state/actions/action.types";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {  getComment, getPost } from "../../state/selectors/app.selectors";
+import { getComment, getPost } from "../../state/selectors/post.selectors";
+import {getAllComments, getPost as getPostByID} from "../../services/post.services";
+import { Post } from "../../types/post.types";
+import { Date, TitleH3 } from "../../components/styled/Typography";
+import { Details, Img } from "../../components/styled/Post";
 import PostComment from "./PostComment";
-import { IState } from "../../interfaces/app.interface";
 import FormComments from "./FormComments";
 
 const PostPage = () => {
     const params = useParams();
-    const post = useSelector(getPost);
-    const comments = useSelector((state: IState) => getComment(state, params?.id));
+    const post: Post | {} = useSelector(getPost(params.id));
+    const comments = useSelector(getComment(params.id));
 
     useEffect(() => {
-        getDataByID(API.POST_GET_BY_ID, params?.id, POST_ACTION_TYPES.GET_BY_ID)
-    }, [])
-
-    
-    useEffect(() => {
-        getData(API.COMMENT, POST_ACTION_TYPES.GET_COMMENTS)
-    }, [])
+        if(params.id) {
+            getPostByID(params.id);
+            getAllComments();
+        }
+    }, [params.id])
 
     return (
         <Details>
@@ -38,7 +33,6 @@ const PostPage = () => {
                 <hr/>
                 {comments && comments.map(comment=> (<PostComment key={comment.id} comment={comment} />))}
             </div>
-           
         </Details>
     )
 }

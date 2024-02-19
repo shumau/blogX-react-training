@@ -1,9 +1,10 @@
+import { ReactNode } from "react";
 import { Routes, Route } from 'react-router-dom';
 import routes from './routes';
 
 type RouteType = {
     url: string,
-    component: React.ReactNode,
+    component: ReactNode,
     subroutes?: RouteType[]
 }
 
