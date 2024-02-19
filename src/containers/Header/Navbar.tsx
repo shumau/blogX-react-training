@@ -11,17 +11,17 @@ const Navbar = () => {
     const toggleNav = () => { toggleNavBar()}
     return (
         <>
-            <NavigationButton onClick={toggleNav} >
-                <span></span>
-                <span></span>
+            <NavigationButton  onClick={toggleNav} >
+                <span className={isOpen ? 'open' : ''}></span>
+                <span className={isOpen ? 'open' : ''}></span>
             </NavigationButton>
-            {isOpen  && (
+
                 <Navigation open={isOpen}>
                     <Link onClick={toggleNav} to="/">Home</Link>
                     <Link onClick={toggleNav} to="/feed">Feed</Link>
                     <Link onClick={toggleNav} to="/login">Login</Link>
                 </Navigation>
-            )}
+            
         </>
     )
 }

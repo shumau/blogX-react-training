@@ -29,9 +29,9 @@ export const Navigation = styled.div<Props>`
     position: fixed;
     padding-top: 100px;
     top: 0;
-    left: 0;
-    width: 300px;
+    left: -320px;
     display: flex;
+    width: 300px;
     flex-direction: column;
     height: 100vh;
     z-index: 10000;
@@ -39,16 +39,10 @@ export const Navigation = styled.div<Props>`
     list-style-type: none;
     align-items: center;
     gap:20px;
-    ${props => props.open && css`animation: menu 1s linear;`}
-
-    @keyframes menu {
-        0% {
-            transform: translateX(-100%)
-        }
-        100% {
-            transform: translateX(0)
-        }
-    }
+    -webkit-transition: left 0.5s;
+    -moz-transition: left 0.5s;
+    transition: left 0.5s;
+    ${props => props.open && css` left: 0;`}
 `
 export const Headers = styled.header`
    padding: 20px 0;

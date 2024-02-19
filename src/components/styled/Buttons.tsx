@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+
 export const NavigationButton = styled.button`
     display: flex;
     position: absolute;
@@ -15,6 +16,19 @@ export const NavigationButton = styled.button`
         width: 15px;
         height: 3px;
         background-color: black;
+        transition: transform 0.5s;
+
+        &.open{
+            &:first-child{
+                transform: rotate(45deg);
+                transform-origin: -1px 3px;
+            }
+
+            &:last-child{
+                transform: rotate(-45deg);
+                transform-origin: 4px 2px;
+            }
+        }
     }
 
     z-index: 100000;
