@@ -92,3 +92,7 @@ export const LoadingContainer = styled.div`
     align-items: center;
     justify-content: center;
 `
+
+export const AccountContainer = styled.div`
+    padding: 0 100px;
+`

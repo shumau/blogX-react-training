@@ -1,3 +1,4 @@
+import Account from "../containers/Account/Account";
 import Home from "../containers/Home/HomePage";
 import LoginPage from "../containers/Login/LoginPage";
 import PostPage from "../containers/Post/PostPage";
@@ -22,6 +23,10 @@ const routes = [
     {
         url: "/post/:id",
         component: <PostPage />
+    },
+    {
+        url: "/account",
+        component: <Account />
     }
 ];
 
