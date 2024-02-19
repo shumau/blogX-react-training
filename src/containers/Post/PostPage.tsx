@@ -7,6 +7,7 @@ import { Post } from "../../types/post.types";
 import { Date, TitleH3 } from "../../components/styled/Typography";
 import { Details, Img } from "../../components/styled/Post";
 import PostComment from "./PostComment";
+import FormComments from "./FormComments";
 
 const PostPage = () => {
     const params = useParams();
@@ -28,10 +29,10 @@ const PostPage = () => {
             <p style={{marginBottom:150}}>{(post as Post)?.content}</p>
             <div>
                 <TitleH3>Comments</TitleH3>
+                <FormComments/>
                 <hr/>
                 {comments && comments.map(comment=> (<PostComment key={comment.id} comment={comment} />))}
             </div>
-
         </Details>
     )
 }

@@ -26,6 +26,7 @@ export const Form = styled.form`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: end;
 `
 export const Field = styled.div`
     display: flex;
@@ -56,4 +57,6 @@ export const SubmitContainer = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `
+
