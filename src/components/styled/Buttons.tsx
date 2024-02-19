@@ -20,7 +20,7 @@ export const NavigationButton = styled.button`
     z-index: 100000;
 `
 export const SubmitFormButton = styled.button`
-    min-width: 100%;
+    
     cursor: pointer;
     margin-right: 0.25em;
     margin-top: 0.5em;

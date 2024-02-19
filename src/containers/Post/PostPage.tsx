@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import {  getComment, getPost } from "../../state/selectors/app.selectors";
 import PostComment from "./PostComment";
 import { IState } from "../../interfaces/app.interface";
+import FormComments from "./FormComments";
 
 const PostPage = () => {
     const params = useParams();
@@ -33,6 +34,7 @@ const PostPage = () => {
             <p style={{marginBottom:150}}>{(post as Post)?.content}</p>
             <div>
                 <TitleH3>Comments</TitleH3>
+                <FormComments/>
                 <hr/>
                 {comments && comments.map(comment=> (<PostComment key={comment.id} comment={comment} />))}
             </div>
