@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { LogOut, toggleNavBar } from "../../state/actions/app.actions";
 import { getToggle } from "../../state/selectors/app.selectors";
@@ -9,10 +9,12 @@ import { getUser } from "../../state/selectors/user.selectors";
 const Navbar = () => {
     const isOpen = useSelector(getToggle);
     const user = useSelector(getUser);
+    const navigate = useNavigate();
 
     const toggleNav = () => toggleNavBar();
     const logOut = () => {
         LogOut();
+        navigate('/')
         toggleNavBar();
     }
 
