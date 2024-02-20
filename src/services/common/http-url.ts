@@ -1,4 +1,5 @@
 export const API = {
     POST: "/posts",
-    COMMENT: "/comments"
+    COMMENT: "/comments",
+    USER: '/users'
 }

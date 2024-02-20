@@ -7,7 +7,7 @@ import AppReducer from "./app.reducer";
 const rootReducer = combineReducers({
     http: HttpReducer,
     posts: PostsReducer,
-    user: UserReducer,
+    users: UserReducer,
     app: AppReducer
 })
 
