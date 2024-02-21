@@ -1,3 +1,5 @@
 export enum USER_ACTIONS {
-    GET_USER = "GET_USER"
+    LOAD= "LOAD_ALL_USER",
+    LOAD_USER = "LOAD_USER",
+    LOG_OUT = "LOG_OUT"
 }
