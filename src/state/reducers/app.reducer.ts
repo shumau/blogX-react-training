@@ -4,7 +4,7 @@ const INITIAL_APP_STATE = {
 }
 
 const AppReducer = (state = INITIAL_APP_STATE, action: any) => {
-    const { type, payload } = action;
+    const { type } = action;
     switch(type) {
         case APP_ACTIONS.TOGGLE_NAVBAR:
             return {...state, isOpen: !state.isOpen };
