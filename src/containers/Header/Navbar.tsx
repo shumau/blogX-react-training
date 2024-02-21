@@ -28,7 +28,10 @@ const Navbar = () => {
                 <Link onClick={toggleNav} to="/">Home</Link>
                 <Link onClick={toggleNav} to="/feed">Feed</Link>
                 {
-                    Object.keys(user).length ? <button style={{border: "none", background: "transparent", fontSize: 14, cursor: "pointer"}} onClick={logOut}>Logout</button> :  <Link onClick={toggleNav} to="/login">Login</Link>
+                    Object.keys(user).length ? <>
+                        <Link onClick={toggleNav} to="/account">Account</Link>
+                        <button style={{border: "none", background: "transparent", fontSize: 14, cursor: "pointer"}} onClick={logOut}>Logout</button>
+                    </> :  <Link onClick={toggleNav} to="/login">Login</Link>
                 }
             </Navigation>
         </>
