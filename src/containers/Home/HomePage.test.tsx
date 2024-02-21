@@ -2,7 +2,7 @@ import HomePage from "./HomePage";
 import {render} from '@testing-library/react'
 import * as reactRedux from 'react-redux'
 import { Post } from "../../types/post.types";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 jest.mock('react-redux')
 

@@ -39,9 +39,9 @@ export const Navigation = styled.div<Props>`
     list-style-type: none;
     align-items: center;
     gap:20px;
-    -webkit-transition: left 0.5s;
-    -moz-transition: left 0.5s;
-    transition: left 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
     ${props => props.open && css` left: 0;`}
 `
 export const Headers = styled.header`
