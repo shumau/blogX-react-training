@@ -20,15 +20,15 @@ const Navbar = () => {
 
     return (
         <>
-            <NavigationButton  onClick={toggleNav} >
+            <NavigationButton onClick={toggleNav} >
                 <span className={isOpen ? 'open' : ''}></span>
                 <span className={isOpen ? 'open' : ''}></span>
             </NavigationButton>
-            <Navigation open={isOpen}>
+            <Navigation data-testid = 'navbar' open={isOpen}>
                 <Link onClick={toggleNav} to="/">Home</Link>
                 <Link onClick={toggleNav} to="/feed">Feed</Link>
                 {
-                    Object.keys(user).length ? <>
+                    user && Object.keys(user).length ? <>
                         <Link onClick={toggleNav} to="/account">Account</Link>
                         <button style={{border: "none", background: "transparent", fontSize: 14, cursor: "pointer"}} onClick={logOut}>Logout</button>
                     </> :  <Link onClick={toggleNav} to="/login">Login</Link>
