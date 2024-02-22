@@ -9,12 +9,12 @@ import { getUser } from "../../state/selectors/user.selectors";
 const Navbar = () => {
     const isOpen = useSelector(getToggle);
     const user = useSelector(getUser);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const toggleNav = () => toggleNavBar();
     const logOut = () => {
         LogOut();
-        // navigate('/')
+        navigate('/')
         toggleNavBar();
     }
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <span className={isOpen ? 'open' : ''}></span>
                 <span className={isOpen ? 'open' : ''}></span>
             </NavigationButton>
-            <Navigation role='nav' data-testid = "navbar" open={isOpen}>
+            <Navigation data-testid = 'navbar' open={isOpen}>
                 <Link onClick={toggleNav} to="/">Home</Link>
                 <Link onClick={toggleNav} to="/feed">Feed</Link>
                 {
