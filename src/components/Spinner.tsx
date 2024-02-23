@@ -9,7 +9,7 @@ const Spinner = () => {
        <>
            {
                loading && (
-                   <LoadingContainer>
+                   <LoadingContainer data-testid = 'spinner'>
                        <Loading/>
                    </LoadingContainer>
                )

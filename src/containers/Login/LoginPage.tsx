@@ -69,15 +69,15 @@ const LoginPage = () => {
         <Wrapper>
             <Container>
                 <Title>Login</Title>
-                <Form onSubmit={(event) => handleSubmit(event)} noValidate >
+                <Form data-testid = 'form-login' onSubmit={(event) => handleSubmit(event)} noValidate >
                     <Field>
                         <Label htmlFor="username">Username</Label>
-                        <Input type='text' name='username' onChange={(event) => handleChange(event)}/>
+                        <Input data-testid = 'username' type='text' name='username' onChange={(event) => handleChange(event)}/>
                         <FieldError error={errors.username}/>
                     </Field>
                     <Field>
                         <Label htmlFor="password">Password</Label>
-                        <Input type='password' name='password' onChange={(event) => handleChange(event)}/>
+                        <Input data-testid = 'password' type='password' name='password' onChange={(event) => handleChange(event)}/>
                         <FieldError error={errors.password}/>
                     </Field>
                     <SubmitContainer>
