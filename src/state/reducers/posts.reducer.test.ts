@@ -1,6 +1,5 @@
 import { Post } from "../../types/post.types";
-import store from "../store";
-import { toggleNavBar } from "./app.actions"
+import PostsReducer from "./posts.reducer";
 
 const post: Post = {
     "id": 1,
@@ -17,14 +16,22 @@ const post: Post = {
     "userId": 1
 }
 
-describe('app actions', ()=>{
-    it('after calling the method toggleNavBar, the state changes', ()=>{
-        toggleNavBar();
-        expect(store.getState().app.isOpen).toBe(true)
+describe('posts reducer', ()=>{
+    const INITIAL_POSTS_STATE = {
+        list: [],
+        post: {},
+        comments: [],
+        liked: []
+    }
+
+    it('should return default state when passed an empty action', ()=>{
+        const result = PostsReducer(undefined, {type: ''});
+        expect(result).toEqual(INITIAL_POSTS_STATE)
     })
 
-    it('after calling the method likedPost, the post id is placed in the store', ()=>{
-        likedPost(post.id);
-        expect(store.getState().posts.liked[postId].id).toBe(post.id)
+    it('changing state with action with type LIKED_POST', ()=>{
+        const action = {type: 'LIKED_POST', payload: post.id}
+        const result = PostsReducer(INITIAL_POSTS_STATE, action)
+        expect(result.liked[post.id].postId).toBe(post.id)
     })
 })
