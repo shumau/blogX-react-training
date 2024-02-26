@@ -23,7 +23,7 @@ const PostPage = () => {
 
     return (
         <Details>
-            <TitleH3>{(post as Post)?.title}</TitleH3>
+            <TitleH3 data-testid = 'post-title'>{(post as Post)?.title}</TitleH3>
             <Date>{(post as Post)?.publishedAt}</Date>
             <Img src={(post as Post)?.image} alt={(post as Post)?.title} />
             <p style={{marginBottom:150}}>{(post as Post)?.content}</p>

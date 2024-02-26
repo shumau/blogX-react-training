@@ -17,7 +17,7 @@ const post: Post = {
     "userId": 1
 }
 
-describe('app actions', ()=>{
+describe('app actions toggle', ()=>{
     it('after calling the method toggleNavBar, the state changes', ()=>{
         toggleNavBar();
         expect(store.getState().app.isOpen).toBe(true)
