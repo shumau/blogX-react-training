@@ -24,15 +24,15 @@ const LoginPage = () => {
         getAllUsers()
     }, [])
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         const error = {
             username: "",
             password: "",
             all: "",
         };
-        const username = event.currentTarget.username.value;
-        const password = event.currentTarget.password.value;
+        const username = event.target.children[0].querySelector('input').value;
+        const password = event.target.children[1].querySelector('input').value;
         const user = users.filter(user => user.login.username === username && user.login.password === password);
         const userId = user && user.length ? user[0].id + '' : '';
         if(userId){

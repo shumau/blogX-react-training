@@ -8,7 +8,7 @@ type PostCommentType = {
 const PostComment = (props: PostCommentType) => {
     return (
         <div>
-            <CommentBody>{props.comment?.comment}</CommentBody>
+            <CommentBody data-testid = 'comment'>{props.comment?.comment}</CommentBody>
             <hr/>
         </div>
     )

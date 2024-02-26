@@ -13,7 +13,7 @@ const UserReducer = (state = INITIAL_USER_STATE, action: any) => {
         case USER_ACTIONS.LOAD_USER:
             return {
                 ...state,
-                user:  payload
+                user: payload
             };
         case USER_ACTIONS.LOG_OUT: 
             return {...state, user: payload}

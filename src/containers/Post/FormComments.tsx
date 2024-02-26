@@ -6,7 +6,7 @@ import { Textarea } from "../../components/styled/Post";
 const FormComments = () => {
     return (
         <Form>
-            <Textarea name="comment" id="comment"></Textarea>
+            <Textarea data-testid = 'comment' name="comment" id="comment"></Textarea>
             <SubmitFormButton>Comment</SubmitFormButton>
         </Form>
     )

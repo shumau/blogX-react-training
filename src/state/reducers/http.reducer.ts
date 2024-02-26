@@ -1,5 +1,8 @@
 import {HTTP_ACTIONS} from "../../enums/http.enum";
-const INITIAL_HTTP_STATE = {}
+const INITIAL_HTTP_STATE = {
+    loading: false,
+    error: ''
+}
 
 const HttpReducer = (state = INITIAL_HTTP_STATE, action: any) => {
     const { type, payload } = action;

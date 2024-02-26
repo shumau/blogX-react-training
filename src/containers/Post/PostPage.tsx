@@ -13,7 +13,7 @@ const PostPage = () => {
     const params = useParams();
     const post: Post | {} = useSelector(getPost(params.id));
     const comments = useSelector(getComment(params.id));
-
+    
     useEffect(() => {
         if(params.id) {
             getPostByID(params.id);
