@@ -1,10 +1,11 @@
-import { getToggle } from "./app.selectors"
+import { getHttp, hasError, isLoading } from "./http.selectors"
 
-describe('app selectors', ()=>{
+describe('http selectors', ()=>{
+
     const INITIAL_STATE = {
         http: {
             loading: false,
-            error: '',
+            error: 'error',
         },
         users: {
             list: [],
@@ -51,7 +52,18 @@ describe('app selectors', ()=>{
         }
     } 
 
-    it('should return isOpen', ()=>{
-        expect(getToggle(INITIAL_STATE)).toBe(true)
+    it('should return http object', ()=>{
+        expect( getHttp(INITIAL_STATE)).toEqual({
+                                                    loading: false,
+                                                    error: 'error',
+                                                })
+    })
+
+    it('should return loading status', ()=>{
+        expect( isLoading(INITIAL_STATE)).toBe(false)
+    })
+
+    it('should return error', ()=>{
+        expect( hasError(INITIAL_STATE)).toEqual('error')
     })
 })

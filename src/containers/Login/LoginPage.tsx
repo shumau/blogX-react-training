@@ -24,15 +24,15 @@ const LoginPage = () => {
         getAllUsers()
     }, [])
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault();
         const error = {
             username: "",
             password: "",
             all: "",
         };
-        const username = event.currentTarget.username.value;
-        const password = event.currentTarget.password.value;
+        const username = event.target.children[0].querySelector('input').value;
+        const password = event.target.children[1].querySelector('input').value;
         const user = users.filter(user => user.login.username === username && user.login.password === password);
         const userId = user && user.length ? user[0].id + '' : '';
         if(userId){
@@ -69,15 +69,15 @@ const LoginPage = () => {
         <Wrapper>
             <Container>
                 <Title>Login</Title>
-                <Form onSubmit={(event) => handleSubmit(event)} noValidate >
+                <Form data-testid = 'form-login' onSubmit={(event) => handleSubmit(event)} noValidate >
                     <Field>
                         <Label htmlFor="username">Username</Label>
-                        <Input type='text' name='username' onChange={(event) => handleChange(event)}/>
+                        <Input data-testid = 'username' type='text' name='username' onChange={(event) => handleChange(event)}/>
                         <FieldError error={errors.username}/>
                     </Field>
                     <Field>
                         <Label htmlFor="password">Password</Label>
-                        <Input type='password' name='password' onChange={(event) => handleChange(event)}/>
+                        <Input data-testid = 'password' type='password' name='password' onChange={(event) => handleChange(event)}/>
                         <FieldError error={errors.password}/>
                     </Field>
                     <SubmitContainer>

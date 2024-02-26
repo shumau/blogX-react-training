@@ -8,9 +8,7 @@ export interface IState {
     };
     users: {
         list: User[];
-        user: {
-            [key: string]: User
-        }
+        user: User
     };
     posts: {
         list: Post[];
